@@ -50,7 +50,6 @@ public class WebDriverExample {
         // Clicking the "Заказы"-button on the main menu:
         WebElement orders = (new WebDriverWait(driver, 10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.linkText("Заказы")));
-        //WebElement orders = driver.findElement(By.linkText("Заказы"));
         orders.click();
         String ordersTitle = driver.getTitle();
         System.out.println("Заказы title is: " + ordersTitle);
@@ -62,7 +61,6 @@ public class WebDriverExample {
         // Clicking the "Каталог"-button on the main menu:
         WebElement catalog = (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.presenceOfElementLocated(By.linkText("Каталог")));
-        //WebElement orders = driver.findElement(By.linkText("Заказы"));
         catalog.click();
         String catalogTitle = driver.getTitle();
         System.out.println("Каталог title is: " + catalogTitle);
@@ -74,7 +72,6 @@ public class WebDriverExample {
         // Clicking the Клиенты-button on the main menu:
         WebElement clients = (new WebDriverWait(driver, 10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.linkText("Клиенты")));
-        //WebElement orders = driver.findElement(By.linkText("Заказы"));
         clients.click();
 
         String clientsTitle = driver.getTitle();
@@ -88,7 +85,6 @@ public class WebDriverExample {
         // Clicking the "Служба поддержки"-button on the main menu:
         WebElement maintain = (new WebDriverWait(driver, 10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.linkText("Служба поддержки")));
-        //WebElement orders = driver.findElement(By.linkText("Заказы"));
         maintain.click();
 
         String maintainTitle = driver.getTitle();
@@ -102,7 +98,6 @@ public class WebDriverExample {
         // Clicking the "Статистика"-button on the main menu:
         WebElement statistic = (new WebDriverWait(driver, 10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.linkText("Статистика")));
-        //WebElement orders = driver.findElement(By.linkText("Заказы"));
         statistic.click();
 
         String statisticTitle = driver.getTitle();
@@ -116,7 +111,6 @@ public class WebDriverExample {
         // Clicking the "Modules"-button on the main menu:
         WebElement modules = (new WebDriverWait(driver, 10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.linkText("Modules")));
-        //WebElement orders = driver.findElement(By.linkText("Заказы"));
         modules.click();
 
         String modulesTitle = driver.getTitle();
@@ -135,9 +129,7 @@ public class WebDriverExample {
         // Clicking the "Design"-button on the main menu:
         WebElement design = (new WebDriverWait(driver, 10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.linkText("Design")));
-        //WebElement orders = driver.findElement(By.linkText("Заказы"));
         design.click();
-        // System.out.println("Design was clicked");
 
         String designTitle = driver.getTitle();
         System.out.println("Design title is: " + designTitle);
@@ -155,9 +147,7 @@ public class WebDriverExample {
         // Clicking the "Доставка"-button on the main menu:
         WebElement shipping = (new WebDriverWait(driver, 10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.linkText("Доставка")));
-        //WebElement orders = driver.findElement(By.linkText("Заказы"));
         shipping.click();
-        // System.out.println("Design was clicked");
 
         String shippingTitle = driver.getTitle();
         System.out.println("Доставка title is: " + shippingTitle);
@@ -170,9 +160,7 @@ public class WebDriverExample {
         // Clicking the "Способ оплаты"-button on the main menu:
         WebElement payment = (new WebDriverWait(driver, 10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.linkText("Способ оплаты")));
-        //WebElement orders = driver.findElement(By.linkText("Заказы"));
         payment.click();
-        // System.out.println("Design was clicked");
 
         String paymentTitle = driver.getTitle();
         System.out.println("Способ оплаты title is: " + paymentTitle);
@@ -185,9 +173,7 @@ public class WebDriverExample {
         // Clicking the "International"-button on the main menu:
         WebElement international = (new WebDriverWait(driver, 10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.linkText("International")));
-        //WebElement orders = driver.findElement(By.linkText("Заказы"));
         international.click();
-        // System.out.println("Design was clicked");
 
         String internationalTitle = driver.getTitle();
         System.out.println("International title is: " + internationalTitle);
@@ -197,6 +183,32 @@ public class WebDriverExample {
         System.out.println("International refreshed title is: " + internationalTitleRefreshed);
         // Comparing International-page and refreshed International-page:
         System.out.println(internationalTitle.equals(internationalTitleRefreshed) ? "International refresh OK" : "International refresh ERROR!");
+        // Clicking the "Shop Parameters"-button on the main menu:
+        WebElement shopParameters = (new WebDriverWait(driver, 10))
+                .until(ExpectedConditions.presenceOfElementLocated(By.linkText("Shop Parameters")));
+        shopParameters.click();
+
+        String shopParametersTitle = driver.getTitle();
+        System.out.println("Shop parameters title is: " + shopParametersTitle);
+        driver.navigate().refresh();
+
+        String shopParametersTitleRefreshed = driver.getTitle();
+        System.out.println("Shop parameters refreshed title is: " + shopParametersTitleRefreshed);
+        // Comparing Shop parameters-page and refreshed Shop parameters-page:
+        System.out.println(shopParametersTitle.equals(shopParametersTitleRefreshed) ? "Shop parameters refresh OK" : "Shop parameters refresh ERROR!");
+        // Clicking the "Конфигурация"-button on the main menu:
+        WebElement configuration = (new WebDriverWait(driver, 10))
+                .until(ExpectedConditions.presenceOfElementLocated(By.linkText("Конфигурация")));
+        configuration.click();
+
+        String configurationTitle = driver.getTitle();
+        System.out.println("Конфигурация title is: " + configurationTitle);
+        driver.navigate().refresh();
+
+        String configurationTitleRefreshed = driver.getTitle();
+        System.out.println("Конфигурация refreshed title is: " + configurationTitleRefreshed);
+        // Comparing Конфигурация-page and refreshed Конфигурация-page:
+        System.out.println(configurationTitle.equals(configurationTitleRefreshed) ? "Конфигурация refresh OK" : "Конфигурация refresh ERROR!");
 
         driver.quit();
     }
