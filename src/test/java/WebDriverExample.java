@@ -1,26 +1,19 @@
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.List;
 
 public class WebDriverExample {
     public static void main(String[] args) {
         WebDriver driver = getDriver();
-        /*driver.manage().window().maximize();
-        driver.get("https://www.bing.com/");
 
-        WebElement searchInput = driver.findElement(By.id("sb_form_q"));
-        searchInput.sendKeys("Selenium");
-        searchInput.submit();
-        driver.quit();*/
-
-//        WebElement searchButton = driver.findElement(By.name("go"));
-//        searchButton.click();
-
+        //==================================SCRIPT "B"=================================================================
         // Entering the site:
         driver.get("http://prestashop-automation.qatestlab.com.ua/admin147ajyvk0/");
         // Filling email-feld:
@@ -34,7 +27,15 @@ public class WebDriverExample {
         submitButton.click();
         sleeping(1000);
 
-        //============================================================================================================
+        //================================== FOR SCRIPT "A"============================================================
+//        WebElement userIcon = driver.findElement(By.cssSelector("img.imgm.img-thumbnail"));
+//        userIcon.click();
+//        WebElement escape = driver.findElement(By.id("header_logout"));
+//       /* WebElement escape = (new WebDriverWait(driver, 10))
+//                .until(ExpectedConditions.presenceOfElementLocated(By.id("header_logout")));*/
+//        escape.click();
+//        driver.quit();
+        //=============================================================================================================
         String[] mainMenuButtons = new String[13];
         mainMenuButtons[0] = "Dashboard";
         mainMenuButtons[1] = "Заказы";
@@ -66,13 +67,13 @@ public class WebDriverExample {
             // Comparing page and refreshed page:
             System.out.println(title.equals(refreshedTitle) ? linkText + " refresh OK" : linkText + " refresh ERROR!");
         }
-        //============================================================================================================
-        
+        //=============================================================================================================
+
         driver.quit();
     }
 
     public static WebDriver getDriver() {
-        System.setProperty("webdriver.chrome.driver", "d:/Soft/chromedriver_win32/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "//src/main/resources/chromedriver.exe");
         return new ChromeDriver();
     }
 
